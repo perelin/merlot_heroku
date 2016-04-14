@@ -1,0 +1,10 @@
+{
+  "name": "t2rss",
+  "description": "Twitter2RSS",
+  "keywords": [
+    "rss",
+    "go",
+    "twitter"
+  ],
+  "image": "heroku/go:1.6"
+}
