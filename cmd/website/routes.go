@@ -14,8 +14,8 @@ var (
 func getPort() string {
 	port := os.Getenv("PORT")
 	if port == "" {
-		log.Printf("$PORT is not set, using default port (8080)")
 		port = "5000"
+		log.Printf("$PORT is not set, using default port: %s", port)
 	}
 	return port
 }
@@ -34,6 +34,9 @@ func initRouter() {
 	router.Static("/css", "static/css")
 	router.Static("/img", "static/img")
 	router.Static("/fonts", "static/fonts")
+	router.StaticFile("/favicon.ico", "static/root/favicon.ico")
+	router.StaticFile("/robots.txt", "static/root/robots.txt")
+	router.StaticFile("/apple-touch-icon.png", "static/root/apple-touch-icon.png")
 
 	/*
 		router.GET("/", func(c *gin.Context) {

@@ -7,14 +7,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Bodega Patiño - Merlot Wein Auswahl</title>
-        <meta name="description" content="">
+        <meta name="description" content="Merlot Wein Auswahl">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-
-        </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
 
@@ -35,54 +32,57 @@
         </div>
 
         <div class="headline-bckrd subline-txt">
-          Merlot, ein ganz besonderer Wein. Entdecken Sie bei uns eine kurze Geschichte des Merlots <br />und unsere Empfehlungen ausgesuchter Melot Weine.
+          Merlot, ein ganz besonderer Wein. Entdecken Sie bei uns eine kurze Geschichte des Merlots (kommt bald) <br />und unsere Empfehlungen ausgesuchter Melot Weine.
         </div>
 
       </div>
     </div>
 
     <div class="container">
-      
-      <div class="row prod-row">
-        <div class="col-md-2 prod-img">
-          <img src="img/31KLOh3UlvL.jpg" height="300px">
+
+    {{range .products}}
+
+        <div class="row prod-row">
+          <div class="col-md-2 prod-img">
+            <a rel="nofollow" target="_blank" href="http://www.amazon.de/gp/product/{{.ASIN}}/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN={{.ASIN}}&linkCode=as2&tag=p2we-21">
+                <img src="img/{{.Image}}" height="300px">
+            </a>
+          </div>
+          <div class="col-md-7">
+            <a rel="nofollow" target="_blank" href="http://www.amazon.de/gp/product/{{.ASIN}}/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN={{.ASIN}}&linkCode=as2&tag=p2we-21">
+                <h1>{{.Name}}</h1>
+            </a>
+            <p>Produzent: {{.Producer}} | Jahrgang: {{.Vintage}} | Herkunft: {{.Origin}}</p>
+            <p>
+                {{.Text}}
+            </p>
+          </div>
+          <div class="col-md-3 prod-price">
+          </div>
+          <div class="price-wrapper">
+            <p class="price">{{.Price}} €</p>
+            <p>{{.Quantity}}</p>
+            <p>
+            <a rel="nofollow" target="_blank" href="http://www.amazon.de/gp/product/{{.ASIN}}/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN={{.ASIN}}&linkCode=as2&tag=p2we-21">
+            <p>
+              <img src="img/button-amazon.png">
+            </p>
+            <p>Zum Angebot</p>
+            </a><img src="http://ir-de.amazon-adsystem.com/e/ir?t=p2we-21&l=as2&o=3&a={{.ASIN}}" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            </p>
+          </div>
         </div>
+        <hr />
 
-        <div class="col-md-8">
-          <h1>Sweet Reeh</h1>
-          <p>Produzent: Reeh Hannes | Jahrgang: 2015 | Herkunft: Frankreich</p>
-          <p>
-            "Ein leuchtendes Kirschrot sticht ins Auge. In der Nase ganz typisch ein Merlotgeruch. Am Gaumen zeigt er sich weich, mild mit leichter Würze und Beeren. Abgerundet wird der Geschmack durch eine zarte Restsüße sowie mit einem Abgang der an reife Brombeeren erinnert." 
-          </p>
-        </div>
+    {{end}}
 
-        <div class="col-md-2 prod-price">
-
-        </div>
-
-        <div class="price-wrapper">
-          <p class="price">9,09 €</p>
-          <p>
-          <a rel="nofollow" target="_blank" href="http://www.amazon.de/gp/product/B00OB9L0NM/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN=B00OB9L0NM&linkCode=as2&tag=p2we-21">
-          <p>
-            
-            <img src="img/button-amazon.png">
-          </p>
-          <p>Zum Angebot</p>
-          </a><img src="http://ir-de.amazon-adsystem.com/e/ir?t=p2we-21&l=as2&o=3&a=B00OB9L0NM" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-          </p>
-        </div>
-
-      </div>
-
-    <hr />
     <footer>
       <p>&copy; Sebastian Patiño-Lang 2016</p>
     </footer>
 
     </div>
 
-    <!-- /container -->        
+    <!-- /container -->
 
     <!--
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
