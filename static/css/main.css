@@ -4,13 +4,13 @@
    Author's custom styles
    ========================================================================== */
 
-@font-face { 
-font-family: "NotoSansRegular"; 
-src: url("../fonts/NotoSans-Regular.ttf"); 
+@font-face {
+font-family: "NotoSansRegular";
+src: url("../fonts/NotoSans-Regular.ttf");
 }
-@font-face { 
-font-family: "FjallaOneRegular"; 
-src: url("../fonts/FjallaOne-Regular.ttf"); 
+@font-face {
+font-family: "FjallaOneRegular";
+src: url("../fonts/FjallaOne-Regular.ttf");
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 }
 
 .cover {
-    background-image: url("../img/cellar.jpg");
+    background-image: url("../img/cellar_small.jpg");
     background-size: cover;
     font-family: FjallaOneRegular, Helvetica, Arial, sans-serif;
     color: white;
@@ -52,7 +52,7 @@ body {
 
 .cover .company-signet {
     color:white;
-    
+
     position:absolute;
     font-size:3em;
     top:-1.1em;
@@ -79,17 +79,3 @@ body {
 .price {
     font-size: 3em;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
