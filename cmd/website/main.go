@@ -14,6 +14,14 @@ func startPageHandler(c *gin.Context) {
 	})
 }
 
+func impressumPageHandler(c *gin.Context) {
+	//c.String(http.StatusOK, "Hello !")
+
+	c.HTML(http.StatusOK, "impressum.tmpl.html", gin.H{
+		"products": Products,
+	})
+}
+
 func main() {
 	//log.Printf("HW!")
 	//log.Printf("The type is: %T \n", Products)
