@@ -11,13 +11,13 @@ var (
 	router = gin.New()
 )
 
-var isRunningOnHeroku = false;
-var localFolderPrefix string;
+var isRunningOnHeroku = false
+var localFolderPrefix string
 
 func setContext() {
 	if os.Getenv("PORT") == "" {
 		isRunningOnHeroku = false
-		localFolderPrefix = "../../";
+		localFolderPrefix = "../../"
 		log.Printf("Running outside of Heroku context")
 	}
 }
@@ -32,12 +32,12 @@ func getPort() string {
 }
 
 func initRouter() {
-	
+
 	setContext()
-	
+
 	router.Use(gin.Logger())
 
-	router.LoadHTMLGlob(localFolderPrefix+"templates/*")
+	router.LoadHTMLGlob(localFolderPrefix + "templates/*")
 
 	/*router.LoadHTMLFiles("templates/twitterlogin.tmpl.html",
 	"templates/twittercallback.tmpl.html",
@@ -58,7 +58,10 @@ func initRouter() {
 		})*/
 
 	router.GET("/", startPageHandler)
-	router.GET("/impressum/", impressumPageHandler)
+
+	router.GET("/impressum", impressumPageHandler)
+
+	router.GET("/datenschutzerklaerung", datenschutzerklaerungPageHandler)
 	//router.GET("/tl", twitterLoginHandler)
 	//router.GET("/tc", twitterCallbackHandler)
 	//router.GET("/tc", twitterCallbackHandler2)
